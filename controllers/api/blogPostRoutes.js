@@ -1,6 +1,24 @@
 const router = require('express').Router();
 const { BlogPost } = require('../../models');
 
+router.get('/', async (req, res) => {
+  try {
+    const dbBlogPostData = await BlogPost.findAll({
+
+    });
+
+    const posts = dbBlogPostData.map((blogPost) =>
+      blogPost.get({ plain: true })
+    );
+
+    res.render('homepage', {
+      posts,
+    });
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  }
+});
 router.post('/', async (req, res) => {
   try {
     const newBlogPost = await BlogPost.create({
