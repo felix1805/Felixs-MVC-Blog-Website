@@ -2,19 +2,16 @@
   {
     "title": "Music Near Me",
     "content": "Find Music new you",
-    "dateCreated": "March 27, 2022",
     "user_id": 1
   },
   {
     "title": "The Ultimate Tech Quiz",
     "content": "quizzes",
-    "dateCreated": "March 28, 2022",
     "user_id": 2
   },
   {
     "title": "Roll 'Em Up",
     "content": "maze game",
-    "dateCreated": "March 28, 2022",
     "user_id": 3
   }
 ]
