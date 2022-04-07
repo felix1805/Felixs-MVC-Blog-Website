@@ -6,40 +6,39 @@
 
 <div class="row mt-4">
   <div class="col-md-6">
-    <h3>Create New Blog Post:</h3>
+    <h3>Create a New Blog Post:</h3>
 
     <form class="form new-blogpost-form">
       <div class="form-group">
-        <label for="blogpost-name">Blogpost name:</label>
+        <label for="blogpost-name">Blog Title:</label>
         <input class="form-input" type="text" id="blogpost-name" name="blogpost-name" />
       </div>
+      <div class="form-group">
+        <label for="blogpost-desc">Content:</label>
+        <textarea class="form-input" id="blogpost-desc" name="blogpost-desc"></textarea>
+      </div>
+      <div class="form-group">
+        <button type="submit" class="btn btn-primary">Create</button>
+      </div>
+    </form>
   </div>
-  <div class="form-group">
-    <label for="blogpost-desc">Description:</label>
-    <textarea class="form-input" id="blogpost-desc" name="blogpost-desc"></textarea>
-  </div>
-  <div class="form-group">
-    <button type="submit" class="btn btn-primary">Create</button>
-  </div>
-  </form>
-</div>
 
-{{#if blogPosts.length}}
-<div class="col-md-6 project-list">
-  <h3>Current Blogposts:</h3>
+  {{#if blogposts.length}}
+  <div class="col-md-6 project-list">
+    <h3>Current Blog Posts:</h3>
 
     {{#each posts as |blogpost|}}
     <div class="row mb-2">
       <div class="col-md-8">
-      <h4><a href="/blogpost/{{blogpost.id}}">{{blogpost.name}}</a></h4>
-    </div>
+        <a href="/blogposts/{{blogpost.id}}">{{blogpost.title}}</a>
+      </div>
       <div class="col-md-4">
         <button class="btn btn-sm btn-danger" data-id="{{blogpost.id}}">DELETE</button>
       </div>
     </div>
     {{/each}}
-</div>
-{{/if}}
+  </div>
+  {{/if}}
 </div>
 
 <script src="/js/profile.js"></script>
