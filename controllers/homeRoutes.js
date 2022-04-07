@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { User, BlogPost } = require('../models');
+const { BlogPost, User } = require('../models');
 const withAuth = require('../utils/auth');
 
 router.get('/', async (req, res) => {
@@ -26,9 +26,9 @@ router.get('/', async (req, res) => {
     res.status(500).json(err);
   }
 });
-router.get('/project/:id', async (req, res) => {
+router.get('/blogpost/:id', async (req, res) => {
   try {
-    const dbBlogPostData = await Project.findByPk(req.params.id, {
+    const dbBlogPostData = await BlogPost.findByPk(req.params.id, {
       include: [
         {
           model: User,
@@ -50,7 +50,6 @@ router.get('/project/:id', async (req, res) => {
 
 router.get('/profile', withAuth, async (req, res) => {
   try {
-    // Find the logged in user based on the session ID
     const userData = await User.findByPk(req.session.user_id, {
       attributes: { exclude: ['password'] },
       include: [{ model: BlogPost }],
@@ -68,9 +67,8 @@ router.get('/profile', withAuth, async (req, res) => {
 });
 
 router.get('/login', (req, res) => {
-  // If the user is already logged in, redirect the request to another route
   if (req.session.logged_in) {
-    res.redirect('/user');
+    res.redirect('/profile');
     return;
   }
 
