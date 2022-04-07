@@ -36,7 +36,7 @@ const delButtonHandler = async (event) => {
       if (response.ok) {
         document.location.replace(`/blogposts/${postId}`);
       } else {
-        alert('Failed to delete comment');
+        alert('You are not Authorized to Delete another Users Comment!!');
       }
     }
   };
