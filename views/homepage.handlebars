@@ -1,8 +1,9 @@
 {{#each posts as |blogpost|}}
 <div class="row mb-4 project">
   <div class="col-md-5">
+    <a href="/blogposts/{{blogpost.id}}">{{blogpost.title}}</a>
     <p>
-      Posted by {{user.name}} on {{format_date date_created}}
+      Posted by {{blogpost.user.name}} on {{format_date blogpost.date_created}}
     </p>
   </div>
   <div class="col-md-7">

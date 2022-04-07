@@ -24,10 +24,10 @@
   </div>
 
   {{#if blogposts.length}}
-  <div class="col-md-6 project-list">
+  <div class="col-md-6 blogpost-list">
     <h3>Current Blog Posts:</h3>
 
-    {{#each posts as |blogpost|}}
+    {{#each blogposts as |blogpost|}}
     <div class="row mb-2">
       <div class="col-md-8">
         <a href="/blogposts/{{blogpost.id}}">{{blogpost.title}}</a>
