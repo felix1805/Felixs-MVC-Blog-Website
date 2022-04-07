@@ -3,8 +3,7 @@ module.exports = {
     return date.toLocaleTimeString();
   },
   format_date: (date) => {
-    const currentYear = date.getFullYear();
-    date.setFullYear(currentYear);
-    return date.toLocaleDateString();
+    const currentDate = new Date(date);
+    return currentDate.toLocaleDateString();
   }
 };

@@ -10,6 +10,13 @@ router.get('/', async (req, res) => {
           model: User,
           attributes: ['name'],
         },
+        {
+          model: Comment,
+          include: {
+            model: User,
+            attributes: ['name'],
+          }
+        },
       ],
     });
 
@@ -26,6 +33,7 @@ router.get('/', async (req, res) => {
     res.status(500).json(err);
   }
 });
+
 router.get('/blogposts/:id', async (req, res) => {
   try {
     const dbBlogPostData = await BlogPost.findByPk(req.params.id, {
@@ -34,15 +42,23 @@ router.get('/blogposts/:id', async (req, res) => {
           model: User,
           attributes: ['name'],
         },
+        {
+          model: Comment,
+          include: {
+            model: User,
+            attributes: ['name']
+          }
+        }
+
       ],
     });
-    
+
 
     const blogpost = dbBlogPostData.get({ plain: true });
 
     res.render('blogposts', {
-      ...blogpost,
-      logged_in: req.session.logged_in
+      blogpost,
+      loggedIn: req.session.loggedIn
     });
   } catch (err) {
     res.status(500).json(err);
@@ -60,7 +76,7 @@ router.get('/profile', withAuth, async (req, res) => {
 
     res.render('profile', {
       ...user,
-      logged_in: true
+      loggedIn: true
     });
   } catch (err) {
     res.status(500).json(err);
@@ -68,7 +84,7 @@ router.get('/profile', withAuth, async (req, res) => {
 });
 
 router.get('/login', (req, res) => {
-  if (req.session.logged_in) {
+  if (req.session.loggedIn) {
     res.redirect('/profile');
     return;
   }
