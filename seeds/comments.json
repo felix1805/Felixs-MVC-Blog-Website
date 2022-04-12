@@ -1,6 +1,6 @@
 [
   {
-    "description": "interesting info",
+    "description": "Fun post # 1",
     "user_id": 1,
     "blogpost_id": 1
   
@@ -12,7 +12,7 @@
   
   },
   {
-    "description": "interesting info 3",
+    "description": "Useful Comment",
     "user_id": 3,
     "blogpost_id": 3
    

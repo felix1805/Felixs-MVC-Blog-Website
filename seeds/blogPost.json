@@ -1,17 +1,17 @@
 [
   {
-    "title": "Music Near Me",
-    "content": "Find Music new you",
+    "title": "How to properly use your Terminal in VS Code",
+    "content": "Terminal Guide",
     "user_id": 1
   },
   {
     "title": "The Ultimate Tech Quiz",
-    "content": "quizzes",
+    "content": "Coding Quiz",
     "user_id": 2
   },
   {
-    "title": "Roll 'Em Up",
-    "content": "maze game",
+    "title": "Having fun with JSON",
+    "content": "JSON tutorial",
     "user_id": 3
   }
 ]
