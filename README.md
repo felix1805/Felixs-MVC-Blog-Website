@@ -52,4 +52,5 @@ This application uses javascript, JEST, HTML, node.js, express routing, mysql2, 
 
 ## Links
 
-[eCommerce back-end-tool GitHub Link](https://felix1805.github.io/Felixs-MVC-Blog-Website/).
+[MVC Blog Website](https://felix1805.github.io/Felixs-MVC-Blog-Website/).
+[Heroku Web Link](https://thawing-hollows-75703.herokuapp.com/).
