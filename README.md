@@ -4,7 +4,7 @@
 
 ## Description
 
-This application was designed to funcion as a blog posting website. The user accesses a local server that is launched and then allows for creating and editing blog posts. Once a post has been created, a user can then add, modify or delete individual comments on an individual post. A user authentication portal allows individual users to create a login profile which then adds the above functionality. 
+This application was designed to function as a blog posting website. The user accesses a local server that is launched and then allows for creating and editing blog posts. Once a post has been created, a user can then add, modify or delete individual comments on an individual post. A user authentication portal allows individual users to create a login profile which then adds the above functionality. 
 
 ## Table of Contents
 
